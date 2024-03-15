@@ -1,0 +1,28 @@
+---
+import Layout from "../Layout.astro";
+import Card from "../components/Card.astro";
+---
+
+<Layout>
+ <h1>KØBENHAVN K</h1>   
+
+<p class="underoverskrift">I København K kan du opleve en magisk lysfestival med imponerende udstillinger. Vælg din foretrukne installation for mere information. </p>
+
+  <div class="grid">
+<Card header="03.PIXELEARTH" image="/billeder/03.pixelearth.png" alt="Pixelearth" text="Knasten, Havnegade 14"/>
+<Card header="03.PIXELEARTH" image="/billeder/03.pixelearth.png" alt="Pixelearth" text="Knasten, Havnegade 14"/>
+<Card header="03.PIXELEARTH" image="/billeder/03.pixelearth.png" alt="Pixelearth" text="Knasten, Havnegade 14"/>
+<Card header="03.PIXELEARTH" image="/billeder/03.pixelearth.png" alt="Pixelearth" text="Knasten, Havnegade 14"/>
+<Card header="03.PIXELEARTH" image="/billeder/03.pixelearth.png" alt="Pixelearth" text="Knasten, Havnegade 14"/>
+<Card header="03.PIXELEARTH" image="/billeder/03.pixelearth.png" alt="Pixelearth" text="Knasten, Havnegade 14"/>
+
+ </div>
+ </Layout>
+
+ <style>
+    .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+  }
+</style>

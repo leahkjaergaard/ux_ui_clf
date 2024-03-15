@@ -1,6 +1,32 @@
 ---
 import Layout from "../Layout.astro";
+import Card from "../components/Card.astro";
 ---
+
 <Layout>
-    <p>Her er slot</p>
+ <h1>PROGRAM</h1>  
+ <p class="underoverskrift">Vælg den bydel som den ønskede udstilling befinder sig i, og se det fulde oversigt </p>
+ 
+ <div class="grid">
+    
+ <Card header="03.PIXELEARTH" image="/billeder/03.pixelearth.png" alt="Pixelearth"/>
+ <Card header="03.PIXELEARTH" image="/billeder/03.pixelearth.png" alt="Pixelearth"/>
+ <Card header="03.PIXELEARTH" image="/billeder/03.pixelearth.png" alt="Pixelearth"/>
+ <Card header="03.PIXELEARTH" image="/billeder/03.pixelearth.png" alt="Pixelearth"/>
+ <Card header="03.PIXELEARTH" image="/billeder/03.pixelearth.png" alt="Pixelearth"/>
+ <Card header="03.PIXELEARTH" image="/billeder/03.pixelearth.png" alt="Pixelearth"/>
+ <Card header="03.PIXELEARTH" image="/billeder/03.pixelearth.png" alt="Pixelearth"/>
+ <Card header="03.PIXELEARTH" image="/billeder/03.pixelearth.png" alt="Pixelearth"/>
+
+</div>
+
 </Layout>
+
+<style>
+    .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 0.5rem;
+  }
+</style>
+
