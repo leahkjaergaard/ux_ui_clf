@@ -1,7 +1,85 @@
 ---
 import Layout from "../Layout.astro";
+import Card from "../components/Card.astro";
 ---
-
 <Layout>
- <h1>03. PIXELEARTH</h1>   
+  <h1>03. PIXELEARTH</h1>  
+  <div class="singleview">
+    <div class="text">
+      <h2>KUNSTNER: Frederik Hougs (DK)</h2>
+      <p>Hvor: Knasten, Havnegade 14</p>
+      <p>Find udstilling her - <a href="#">Se kort</a></p>
+      <p>Værket skaber en forbindelse mellem jorden under os og himmelen over os. Mellem det fysiske og det åndelige. Overgivelse til noget, som er højere end os. Et sted, hvor man kan forbinde sig til det, man tror på.</p>
+      <p>Marie Nørgaard Nielsen er en dansk tekstilkunstner, som tidligere har deltaget i Copenhagen Light Festival med Oraklet i 2022 og med På den anden side af Solen i 2023, der senere samme år var en del af festivalen Light Art Grindelwald i de schweiziske alper.</p>
+      <p>Mani Nikdel er en iransk designer og kunstner, bosat i Århus. Han har deltaget på Copenhagen Light Festival de seneste to år med Transcendence i 2022 og Terra i 2023.</p>
+    </div>
+
+    <div class="image">
+      <Card image="/billeder/03.pixelearth_singleview.webp" />
+    </div>
+  </div>
+
+  <h2 class="underoverskrift">PRAKTISK INFORMATION</h2>
+
+  <div class="praktiskinfo">
+    <div>
+      <a href="#">KORT OVER KØBENHAVN K</a>
+      <Card image="/billeder/kort_oesterbro.webp" />
+    </div>
+    <div>
+      <a href="#">GÅ/CYKELRUTE PÅ 4KM I KØBENHAVN K</a>
+      <Card image="/billeder/rute.webp" />
+    </div>
+  </div>
 </Layout>
+
+<!-- STYLING -->
+
+<style>
+
+h1 {
+margin-bottom: 10rem;
+}
+h2 {
+text-decoration: underline;
+}
+.singleview {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 1rem;
+  /* background-image: url(../billeder/illustration.png); */
+}
+
+.image {
+  grid-column: span 2;
+  display: flex;
+  max-width: 70%;
+  margin-left: 22%
+}
+
+.text {
+line-height: 2rem;
+margin-left: 50px;
+}
+
+.underoverskrift {
+  text-decoration: underline;
+  margin-top: 8rem;
+}
+
+.praktiskinfo {
+  display: flex;
+  justify-content: center; 
+  margin-top: 40px; 
+  gap: 2rem;
+}
+
+.praktiskinfo a {
+  margin-bottom: 10px; 
+  color: white;
+  font-family: "Jaldi", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+</style>
