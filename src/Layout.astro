@@ -1,24 +1,27 @@
 ---
-import Header from "./components/Header.astro"
-import "./style.css"
+import Header from "./components/Header.astro";
+import Footer from "./components/Footer.astro";
+import "./style.css";
 ---
 
 <html lang="en">
-	<head>
-	<meta charset="utf-8" />
-	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-	<meta name="viewport" content="width=device-width" />
-	<meta name="generator" content={Astro.generator} />
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
 
-	<!-- Fonts -->
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Jaldi:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://use.typekit.net/flk1oht.css">
-		<title>Astro</title>
-	</head>
-	<body>
-		<Header />
-		<slot />
-	</body>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Jaldi:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.typekit.net/flk1oht.css" />
+    <title>Astro</title>
+  </head>
+  <body>
+    <Header />
+
+    <slot />
+    <Footer />
+  </body>
 </html>

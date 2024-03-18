@@ -3,5 +3,86 @@ import Layout from "../Layout.astro";
 ---
 
 <Layout>
- <h1>NYHEDSBREV</h1>   
+  <h1>NYHEDSBREV</h1>
+  <p class="underoverskrift">Hold dig opdateret med vores nyhedsbrev</p>
+
+  <div class="form-container">
+    <form>
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" />
+
+      <label for="firstname">Fornavn</label>
+      <input type="text" id="firstname" name="firstname" />
+
+      <label for="lastname">Efternavn</label>
+      <input type="text" id="lastname" name="lastname" />
+
+      <label for="phone">Telefonnummer</label>
+      <input type="tel" id="phone" name="phone" />
+
+      <span>Din relation</span>
+      <label for="guest">Gæst</label>
+      <input type="checkbox" id="guest" name="relation" value="guest" />
+
+      <label for="artist1">Artist</label>
+      <input type="checkbox" id="artist1" name="relation" value="artist" />
+
+      <label for="artist2">Artist</label>
+      <input type="checkbox" id="artist2" name="relation" value="artist" />
+
+      <label for="newsletter">Ja, jeg vil gerne modtage mails med nyheder og markedsføringsrelateret indhold fra Copenhagen Light Festivals aktiviteter.</label>
+      <input type="checkbox" id="newsletter" name="newsletter" />
+
+      <button type="submit">INDSEND</button>
+    </form>
+  </div>
 </Layout>
+
+<style>
+  .form-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  label {
+    margin: 20px 0 10px;
+    font-family: "Jaldi", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  input[type="email"],
+  input[type="text"],
+  input[type="tel"],
+  input[type="checkbox"] {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #555;
+    border-radius: 4px;
+    background-color: #222;
+    color: white;
+  }
+
+  input[type="checkbox"] {
+    margin: 0 30px 0 0;
+  }
+
+  button {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #55dd11;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  button:hover {
+    background-color: #005588;
+  }
+</style>
