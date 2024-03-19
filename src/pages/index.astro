@@ -1,73 +1,41 @@
 ---
 import Layout from "../Layout.astro";
-import Card from "../components/Card.astro";
 ---
 
 
 
 <Layout>
+	<h1></h1>
 
-<div class="wrapper">
+<main>
+
+
+<img src="/billeder/illustration2.webp" alt="illustraion" class="illustraion">
+	<img src="/billeder/illustration.webp" alt="illustraion" class="illustraion2">
 	
 
-<img src="/billeder/illustration2.webp" alt="ill" class="illustration2">
-<img src="/billeder/illustration.webp" alt="ill" class="illustration">
-<div class="text"> COPENHAGEN LIGHT <br> FESTIVAL <br> 2 - 25 FEBRUAR</div>
+</main>
 
-
-</div>
 
 
 </Layout>
 
-<style> 
-
-.wrapper {
-	width: 100%;
-	overflow: hidden;
-}
-
-
-.wrapper .text { 
-	position: absolute;
-	color: white;
-	right: 3rem;
-	top: 6rem;
-	font-size: 5rem;
-	 font-family: "Jaldi", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-	text-align: right;
-	line-height: 1.2;
-}
-
-
-
-
-/* billede style */
-		.illustration2 {
-		max-width: 100vw;
-		display: block;
-		transform: scaleX(1.5) scaleY(1.2) rotate(20deg);
-		filter: brightness(70%);
-		padding-top: 6rem;  /* ændre position på illustration */
+<style>
 	
-	}
 
-	.illustration {
-		max-width: 100vw;
-		display: block;
+	.illustraion {
+		transform: scaleX(1.5) scaley(1.2) rotate(20deg);
+		filter: brightness(70%);
+		position: relative;
+  		bottom: -26px;
+ 		right: 88px;
+	}
+	.illustraion2 {
 		 transform: scaleX(1.5) scaleY(1.5);
 		 filter: brightness(70%);
 		 position: relative;
   		top: 160px;
   		left: 77px;
-		
 	}
-
-
-
-
+	
 </style>
-
-
