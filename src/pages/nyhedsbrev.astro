@@ -20,28 +20,30 @@ import Layout from "../Layout.astro";
       <label for="phone">Telefonnummer</label>
       <input type="tel" id="phone" name="phone" />
 
-      <span>Din relation</span>
-      <label for="guest">Gæst</label>
-      <input type="checkbox" id="guest" name="relation" value="guest" />
+      <div class="checkboxes">
+        <h2>Din relation</h2>
+        <label for="guest"><input type="checkbox" id="guest" name="relation" value="guest" /> Gæst</label>
+        <label for="artist1"><input type="checkbox" id="artist1" name="relation" value="artist" /> Kunstner</label>
+        <label for="artist2"><input type="checkbox" id="artist2" name="relation" value="artist" /> Vært</label>
+      </div>
 
-      <label for="artist1">Artist</label>
-      <input type="checkbox" id="artist1" name="relation" value="artist" />
+      <div class="newsletter-container">
+        <input type="checkbox" id="newsletter" name="newsletter" />
+        <label for="newsletter">Ja, jeg vil gerne modtage mails med nyheder og markedsføringsrelateret indhold fra Copenhagen Light Festivals aktiviteter.</label>
+      </div>
 
-      <label for="artist2">Artist</label>
-      <input type="checkbox" id="artist2" name="relation" value="artist" />
-
-      <label for="newsletter">Ja, jeg vil gerne modtage mails med nyheder og markedsføringsrelateret indhold fra Copenhagen Light Festivals aktiviteter.</label>
-      <input type="checkbox" id="newsletter" name="newsletter" />
-
-      <button type="submit">INDSEND</button>
+      <button type="submit">TILMELD</button>
     </form>
   </div>
 </Layout>
 
 <style>
   .form-container {
-    max-width: 800px;
-    margin: 0 auto;
+    max-width: 700px;
+    margin: 0 auto 10rem;
+    font-family: "Jaldi", sans-serif;
+    font-weight: 400;
+    font-style: normal;
   }
 
   form {
@@ -49,40 +51,45 @@ import Layout from "../Layout.astro";
     flex-direction: column;
   }
 
-  label {
-    margin: 20px 0 10px;
-    font-family: "Jaldi", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-  }
-
-  input[type="email"],
-  input[type="text"],
-  input[type="tel"],
-  input[type="checkbox"] {
-    margin-bottom: 10px;
-    padding: 10px;
-    border: 1px solid #555;
-    border-radius: 4px;
-    background-color: #222;
+  input {
+    margin-bottom: 1rem;
+    padding: 14px;
+    border: 1px solid #4c97c6;
+    background-color: transparent;
     color: white;
   }
 
-  input[type="checkbox"] {
-    margin: 0 30px 0 0;
+  .checkboxes {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .checkboxes label {
+    margin-bottom: 5px;
+  }
+
+  .checkboxes input[type="checkbox"] {
+    margin-right: 10px;
+  }
+
+  .newsletter-container {
+    display: flex;
+    align-items: center;
   }
 
   button {
+    margin-top: 1rem;
     padding: 10px;
     border: none;
     border-radius: 4px;
-    background-color: #55dd11;
-    color: #fff;
+    border: 1px solid #4c97c6;
+    background-color: transparent;
+    color: white;
     cursor: pointer;
     transition: background-color 0.3s;
   }
 
   button:hover {
-    background-color: #005588;
+    background-color: #4c97c6;
   }
 </style>
