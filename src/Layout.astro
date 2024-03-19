@@ -2,7 +2,21 @@
 import Header from "./components/Header.astro";
 import Footer from "./components/Footer.astro";
 import "./style.css";
+
+const data = await fetch("https://yzgwebwfkyaislvevipy.supabase.co/rest/v1/clf_data",
+{
+  method: "GET",
+  headers: {
+  apikey:
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl6Z3dlYndma3lhaXNsdmV2aXB5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA4NDg5MTEsImV4cCI6MjAyNjQyNDkxMX0.6rLMBGBocalM2BMrgiETTrqsbyKcIVCrCAr_bwfmZiw"
+  },
+}
+
+).then(res=>res.json());
+
 ---
+
+
 
 <html lang="en">
   <head>
@@ -19,6 +33,13 @@ import "./style.css";
     <title>Astro</title>
   </head>
   <body>
+
+	{
+	data.map((show) => {
+		return <Card data />;
+	})
+}
+
     <Header />
 
     <slot />
