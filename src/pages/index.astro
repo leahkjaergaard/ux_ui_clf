@@ -1,77 +1,50 @@
 ---
 import Layout from "../Layout.astro";
-import Card from "../components/Card.astro";
 ---
 
-
-
 <Layout>
-
-<div class="wrapper">
-	
-
-<img src="/billeder/illustration2.webp" alt="ill" class="illustration2">
-<img src="/billeder/illustration.webp" alt="ill" class="illustration">
-<div class="text"> COPENHAGEN LIGHT <br> FESTIVAL <br> 2 - 25 FEBRUAR</div>
-
-
-</div>
-{
-data.map((show) => {
-	return <Card data />;
-})
-}
-
+  <div class="wrapper">
+    <img src="/billeder/illustration2.webp" alt="ill" class="illustration2" />
+    <img src="/billeder/illustration.webp" alt="ill" class="illustration" />
+    <div class="text">COPENHAGEN LIGHT <br /> FESTIVAL <br /> 2 - 25 FEBRUAR</div>
+  </div>
 </Layout>
 
-<style> 
+<style>
+  .wrapper {
+    width: 100%;
+    overflow: hidden;
+  }
 
-.wrapper {
-	width: 100%;
-	overflow: hidden;
-}
-
-
-.wrapper .text { 
-	position: absolute;
-	color: white;
-	right: 3rem;
-	top: 6rem;
-	font-size: 5rem;
-	 font-family: "Jaldi", sans-serif;
+  .wrapper .text {
+    position: absolute;
+    color: white;
+    right: 3rem;
+    top: 6rem;
+    font-size: 5rem;
+    font-family: "Jaldi", sans-serif;
     font-weight: 400;
     font-style: normal;
-	text-align: right;
-	line-height: 1.2;
-}
+    text-align: right;
+    line-height: 1.2;
+  }
 
+  /* billede style */
+  .illustration2 {
+    max-width: 100vw;
+    display: block;
+    transform: scaleX(1.5) scaleY(1.2) rotate(20deg);
+    filter: brightness(70%);
+    padding-top: 6rem; /* ændre position på illustration */
+  }
 
-
-
-/* billede style */
-		.illustration2 {
-		max-width: 100vw;
-		display: block;
-		transform: scaleX(1.5) scaleY(1.2) rotate(20deg);
-		filter: brightness(70%);
-		padding-top: 6rem;  /* ændre position på illustration */
-	
-	}
-
-	.illustration {
-		max-width: 100vw;
-		display: block;
-		 transform: scaleX(1.5) scaleY(1.5);
-		 filter: brightness(70%);
-		 position: relative;
-  		top: 160px;
-  		left: 77px;
-		
-	}
-
-
-
-
+  .illustration {
+    max-width: 100vw;
+    display: block;
+    transform: scaleX(1.5) scaleY(1.5);
+    filter: brightness(70%);
+    position: relative;
+    top: 160px;
+    left: 77px;
+  }
 </style>
-
-
