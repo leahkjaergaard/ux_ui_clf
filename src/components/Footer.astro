@@ -8,6 +8,24 @@
     <a href="Læs mere om betingelserne her">Link til nyhedsbrev</a>
   </div>
 
+  <div class="newsletter-box">
+    <div class="input-wrapper">
+      <input type="text" name="name" class="newsletter-name" placeholder="Fornavn" required />
+      <select name="relation">
+        <option value="artist">Artist</option>
+        <option value="gæst">Gæst</option>
+        <option value="vært">Vært</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="newsletter-box">
+    <div class="input-wrapper">
+      <input type="email" name="email" class="newsletter-email" placeholder="Indtast din email" required />
+      <button type="submit">Tilmeld</button>
+    </div>
+  </div>
+
   <div class="footer-links">
     <a href="">KONTAKT</a>
     <a href="">PRESSE</a>
@@ -19,15 +37,16 @@
 
 <style>
   footer {
-    text-align: center; /* Centrer alt indhold i footer */
+    text-align: center;
+    color: white;
+    max-width: 500px;
+    margin: 0 auto;
   }
-
   .footer-links {
     display: flex; /* Brugt flexbox-layout */
     justify-content: center; /* Centrer elementerne vandret */
     gap: 1rem; /* Mellemrum mellem links */
   }
-
   h2,
   a {
     color: white;
@@ -36,8 +55,56 @@
     font-style: normal;
     font-size: 1.1rem; /* Ændret størrelse for links for at matche */
   }
-
   .footer_newsletter h2 {
     margin: 0; /* Nulstil margenen for <h2> i .newsletter-section */
+  }
+
+  /* Footer boks */
+  .newsletter-box {
+    background: transparent; /* Gennemsigtig baggrund */
+    color: white; /* Hvid tekstfarve */
+    border: 1px solid white; /* Hvid kant */
+  }
+
+  .input-wrapper {
+    display: flex;
+    justify-content: center;
+    border: 1px solid white;
+    background-color: transparent; /* Gennemsigtig baggrund for input-wrapper */
+  }
+  .input-wrapper input[type="email"],
+  .input-wrapper input[type="text"] {
+    width: 75%;
+    padding: 25px;
+    border: none;
+    color: white; /* Hvid tekstfarve */
+    background: transparent; /* Gennemsigtig baggrund for input */
+  }
+
+  .input-wrapper select {
+    padding: 10px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    color: white;
+  }
+
+  .input-wrapper button {
+    position: relative;
+    padding: 10px 20px;
+    background-color: transparent;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+
+  .input-wrapper button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -5px;
+    width: 2px;
+    background-color: #ccc;
   }
 </style>
