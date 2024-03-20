@@ -5,6 +5,7 @@ import Card from "../components/Card.astro";
 
 
 
+
 <Layout>
 
 <div class="wrapper">
@@ -15,22 +16,89 @@ import Card from "../components/Card.astro";
 <div class="text"> COPENHAGEN LIGHT <br> FESTIVAL <br> 2 - 25 FEBRUAR</div>
 
 
+<h1>AKTUELT</h1>
 </div>
-{
-data.map((show) => {
-	return <Card data />;
-})
-}
+<!-- KARUSEL -->
+
+    <div class="slider">
+  <div class="slider-inner">
+    <div class="slide">
+		<a href="#">PROGRAM</a>
+      <Card image="/billeder/03.pixelearth_singleview.webp" alt="Pixelearth"/>
+    </div>
+    <div class="slide">
+		<a href="#">VORES APP</a>
+      <Card image="/billeder/03.pixelearth_singleview.webp" alt="Pixelearth"/>
+    </div>
+    <div class="slide">
+		<a href="#">KORT / RUTER </a>
+      <Card image="/billeder/03.pixelearth_singleview.webp" alt="Pixelearth"/>
+    </div>
+	 <div class="slide">
+		<a href="#">BILLETTER</a>
+      <Card image="/billeder/03.pixelearth_singleview.webp" alt="Pixelearth"/>
+    </div>
+  </div>
+
+  <button class="prev">Forrige</button>
+  <button class="next">Næste</button>
+</div>
 
 </Layout>
 
-<style> 
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const slider = document.querySelector('.slider');
+  const sliderInner = document.querySelector('.slider-inner');
+  const slides = document.querySelectorAll('.slide');
+  const prevBtn = document.querySelector('.prev');
+  const nextBtn = document.querySelector('.next');
+
+  let currentIndex = 0;
+  const slideWidth = slides[0].offsetWidth;
+
+  // skift til næste billede
+  function nextSlide() {
+    if (currentIndex < slides.length - 1) {
+      currentIndex++;
+    } else {
+      currentIndex = 0; 
+    }
+    updateSlider();
+  }
+
+ // forrige slide
+  function prevSlide() {
+    if (currentIndex > 0) {
+      currentIndex--;
+    } else {
+      currentIndex = slides.length - 1; 
+    }
+    updateSlider();
+  }
+
+  // Opdater sliderens position baseret på currentIndex
+  function updateSlider() {
+    const newPosition = -currentIndex * slideWidth;
+    sliderInner.style.transform = `translateX(${newPosition}px)`;
+  }
+
+  // Lyt efter klik på navigationsknapperne
+  if (prevBtn && nextBtn) {
+    prevBtn.addEventListener('click', prevSlide);
+    nextBtn.addEventListener('click', nextSlide);
+  }
+});
+</script>
+
+
+<style>
 
 .wrapper {
 	width: 100%;
 	overflow: hidden;
 }
-
 
 .wrapper .text { 
 	position: absolute;
@@ -44,9 +112,6 @@ data.map((show) => {
 	text-align: right;
 	line-height: 1.2;
 }
-
-
-
 
 /* billede style */
 		.illustration2 {
@@ -69,9 +134,41 @@ data.map((show) => {
 		
 	}
 
+h1 {
+text-align: left;
+}
+
+a {
+  margin-bottom: 10px; 
+  color: white;
+  font-family: "Jaldi", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
 
 
+/* KARRUSEL */
+.slider {
+  width: 100%;
+  overflow: hidden;
+}
 
+.slider-inner {
+  display: flex;
+  transition: transform 0.3s ease;
+  gap: 2rem;
+}
+
+.slide {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Tilpas billedstørrelse på mindre skærme */
+@media (max-width: 767px) {
+  .slide {
+    max-width: 100%;
+    max-height: 300px;
+  }
+}
 </style>
-
-
