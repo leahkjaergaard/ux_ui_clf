@@ -13,6 +13,26 @@ import Card from "../components/Card.astro";
 <img src="/billeder/illustration2.webp" alt="ill" class="illustration2">
 <img src="/billeder/illustration.webp" alt="ill" class="illustration">
 <div class="text"> COPENHAGEN LIGHT <br> FESTIVAL <br> 2 - 25 FEBRUAR</div>
+<div id="countdown" class="countdown">
+
+
+	<!-- nedtælling tekst og tal til style -->
+	 <p>NEDTÆLLING TIL COPENHAGEN <br> LIGHT FESTIVAL</p>
+
+	  <div class="countdown-item">
+        <span id="days"></span><br><span class="countdown-text">DAGE</span>
+    </div>
+    <div class="countdown-item">
+        <span id="hours"></span><br><span class="countdown-text">TIMER</span>
+    </div>
+    <div class="countdown-item">
+        <span id="minutes"></span><br><span class="countdown-text">MIN</span>
+    </div>
+    <div class="countdown-item">
+        <span id="seconds"></span><br><span class="countdown-text">SEK</span>
+    </div>
+
+</div>
 
 
 </div>
@@ -42,8 +62,6 @@ import Card from "../components/Card.astro";
 }
 
 
-
-
 /* billede style */
 		.illustration2 {
 		max-width: 100vw;
@@ -66,8 +84,70 @@ import Card from "../components/Card.astro";
 	}
 
 
+	.wrapper .countdown {
+	position: absolute;
+  color: white;
+  left: 35rem;
+  top: 39rem;
+  font-size: 2rem;
+  font-family: "Jaldi",sans-serif; 
+  text-align: center;
+}
+
+/* måske slet /test  */
+.countdown p {
+     font-family: "Jaldi",sans-serif; 
+	font-size: 1.5rem;
+	text-align: center;
+
+}
+
+.countdown-item {
+    display: inline-block;
+    margin-right: 10px; 
+    text-align: center;
+	line-height: 0.7;
+}
+
+.countdown-item span {
+    display: block;
+    font-size: 2rem;
+}
+
+.countdown-item .countdown-text {
+   font-family: "Jaldi",sans-serif; 
+    font-size: 1rem; 
+}
 
 
 </style>
 
 
+
+<script>
+// Måldato (år, måned (0-indeks), dag, time, minut, sekund)
+var targetDate = new Date('2025-02-25T00:00:00');
+
+function countdown() {
+    var currentDate = new Date();
+    var difference = targetDate - currentDate;
+
+    var days = Math.floor(difference / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+    document.getElementById('days').innerHTML = days;
+    document.getElementById('hours').innerHTML = hours;
+    document.getElementById('minutes').innerHTML = minutes;
+    document.getElementById('seconds').innerHTML = seconds;
+
+    if (difference <= 0) {
+        clearInterval(timer);
+        document.getElementById('countdown').innerHTML = 'NEDTÆLLING TIL COPENHAGEN LIGHT FESTIVAL ER NÅET';
+    }
+}
+
+countdown();
+var timer = setInterval(countdown, 1000);
+</script>
