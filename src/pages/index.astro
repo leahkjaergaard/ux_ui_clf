@@ -12,6 +12,9 @@ import Card from "../components/Card.astro";
 
 <img src="/billeder/illustration2.webp" alt="ill" class="illustration2">
 <img src="/billeder/illustration.webp" alt="ill" class="illustration">
+
+
+
 <div class="text"> COPENHAGEN LIGHT <br> FESTIVAL <br> 2 - 25 FEBRUAR</div>
 <div id="countdown" class="countdown">
 
@@ -34,6 +37,12 @@ import Card from "../components/Card.astro";
 
 </div>
 
+<p class="citat"> “Copenhagen Light <br> Festival har fokus på <br> energien” </p>
+
+<div class="brodtekst">
+<h2>VI BRINGER LYS OVER BYEN</h2>
+<p>I løbet af tre uger fyldt med lyskunst og design præsenterer <br> festivalen værker skabt af både etablerede og nye lysdesignere. I <br> februar inviteres alle til at udforske byen.  Nøje udvalgte <br> lysinsallationer transformere byens rum og skaber spændende <br> oplevelser fra indre by til områder udenfor centrum. </p>
+</div>
 
 </div>
 
@@ -48,18 +57,46 @@ import Card from "../components/Card.astro";
 }
 
 
+/* overskrift style */
 .wrapper .text { 
 	position: absolute;
-	color: white;
-	right: 3rem;
-	top: 6rem;
-	font-size: 5rem;
-	 font-family: "Jaldi", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-	text-align: right;
-	line-height: 1.2;
+color: white;
+right: 5%; /* Juster dette efter dine præferencer */
+top: 15%; /* Juster dette efter dine præferencer */
+font-size: 5vw; /* Bruger viewport width (vw) til responsiv skriftstørrelse */
+font-family: "Jaldi", sans-serif;
+font-weight: 400;
+font-style: normal;
+text-align: right;
+line-height: 1.2;
 }
+
+
+
+/* citat style */
+.citat { 
+  position: relative;
+  color: white;
+  right: 25rem;
+  font-size: 3rem;
+  font-family: "Jaldi",sans-serif;
+  font-weight: 100;
+  text-align: center;
+  line-height: 1.2;
+  bottom: 36rem;
+}
+
+.brodtekst {
+	  position: relative;
+  color: white;
+  left: 51rem;
+  font-size: 1.3rem;
+  font-family: "Jaldi",sans-serif;
+  font-weight: 100;
+  line-height: 1.2;
+  bottom: 60rem;
+}
+
 
 
 /* billede style */
@@ -84,22 +121,21 @@ import Card from "../components/Card.astro";
 	}
 
 
+	/* nedtælling style  */
+
 	.wrapper .countdown {
-	position: absolute;
+	position: relative;
   color: white;
-  left: 35rem;
-  top: 39rem;
+  bottom: 52rem;
   font-size: 2rem;
-  font-family: "Jaldi",sans-serif; 
+  font-family: "Jaldi",sans-serif;
   text-align: center;
 }
 
-/* måske slet /test  */
 .countdown p {
      font-family: "Jaldi",sans-serif; 
 	font-size: 1.5rem;
 	text-align: center;
-
 }
 
 .countdown-item {
@@ -118,6 +154,7 @@ import Card from "../components/Card.astro";
   font-weight: 800;
     font-size: 3.5rem; 
 }
+
 
 
 </style>
