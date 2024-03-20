@@ -20,16 +20,16 @@ import Card from "../components/Card.astro";
 	 <p>NEDTÆLLING TIL COPENHAGEN <br> LIGHT FESTIVAL</p>
 
 	  <div class="countdown-item">
-        <span id="days"></span><br><span class="countdown-text">DAGE</span>
+        <span id="days" class="countdown-number"></span><br><span class="countdown-text">DAGE</span>
     </div>
     <div class="countdown-item">
-        <span id="hours"></span><br><span class="countdown-text">TIMER</span>
+        <span id="hours" class="countdown-number"></span><br><span class="countdown-text">TIMER</span>
     </div>
     <div class="countdown-item">
-        <span id="minutes"></span><br><span class="countdown-text">MIN</span>
+        <span id="minutes" class="countdown-number"></span><br><span class="countdown-text">MIN</span>
     </div>
     <div class="countdown-item">
-        <span id="seconds"></span><br><span class="countdown-text">SEK</span>
+        <span id="seconds" class="countdown-number"></span><br><span class="countdown-text">SEK</span>
     </div>
 
 </div>
@@ -104,19 +104,19 @@ import Card from "../components/Card.astro";
 
 .countdown-item {
     display: inline-block;
-    margin-right: 10px; 
     text-align: center;
 	line-height: 0.7;
-}
-
-.countdown-item span {
-    display: block;
-    font-size: 2rem;
 }
 
 .countdown-item .countdown-text {
    font-family: "Jaldi",sans-serif; 
     font-size: 1rem; 
+}
+
+.countdown-number {
+     font-family: "nunito-sans", sans-serif;
+  font-weight: 800;
+    font-size: 3.5rem; 
 }
 
 
