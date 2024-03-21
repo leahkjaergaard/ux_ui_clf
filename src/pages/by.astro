@@ -8,6 +8,12 @@ import Card from "../components/Card.astro";
 
   <p class="underoverskrift">I København K kan du opleve en magisk lysfestival med imponerende udstillinger. Vælg din foretrukne installation for mere information.</p>
 
+  <div class="breadcrumb">
+    <ul>
+      <li><span class="material-symbols-outlined"> arrow_back </span><a href="/program">PROGRAM</a></li>
+    </ul>
+  </div>
+
   <div class="grid">
     <Card header="03.PIXELEARTH" image="/billeder/03.pixelearth.png" alt="Pixelearth" text="Knasten, Havnegade 14" />
     <Card header="03.PIXELEARTH" image="/billeder/03.pixelearth.png" alt="Pixelearth" text="Knasten, Havnegade 14" />
@@ -25,7 +31,32 @@ import Card from "../components/Card.astro";
     gap: 0.5rem;
   }
 
-  .underoverskrift {
-  margin-bottom: 6rem;
+  .breadcrumb,
+  .grid {
+    max-width: 1450px;
+    margin: 0 auto;
+  }
+
+  /* Brødkrummesti */
+
+  .breadcrumb {
+    padding: 1rem 0 2rem 0;
+  }
+
+  .breadcrumb li {
+    display: flex;
+    align-items: center;
+  }
+
+  .material-symbols-outlined {
+    margin-right: 5px; /* Juster margen efter behov */
+    color: white; /* Gør teksten hvid */
+  }
+
+  a {
+    color: white;
+    font-family: "Jaldi", sans-serif;
+    font-weight: 400;
+    font-style: normal;
   }
 </style>
