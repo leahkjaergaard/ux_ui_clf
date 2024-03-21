@@ -1,7 +1,16 @@
 /* FÆLLES STYLES */
-img {
-  max-width: 100%;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 body {
   background-color: #181818;
   color: white;

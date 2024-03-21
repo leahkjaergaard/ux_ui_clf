@@ -1,29 +1,48 @@
 ---
 import Layout from "../Layout.astro";
+import Card from "../components/Card.astro";
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-
-
-=======
->>>>>>> LeahV1
 <Layout>
 
 <div class="wrapper">
 	
-
 <img src="/billeder/illustration2.webp" alt="ill" class="illustration2">
 <img src="/billeder/illustration.webp" alt="ill" class="illustration">
+
 <div class="text"> COPENHAGEN LIGHT <br> FESTIVAL <br> 2 - 25 FEBRUAR</div>
+<div id="countdown" class="countdown">
 
 
-<h1>AKTUELT</h1>
+	<!-- nedtælling tekst og tal til style -->
+	 <p>NEDTÆLLING TIL COPENHAGEN <br> LIGHT FESTIVAL</p>
+
+	  <div class="countdown-item">
+        <span id="days" class="countdown-number"></span><br><span class="countdown-text">DAGE</span>
+    </div>
+    <div class="countdown-item">
+        <span id="hours" class="countdown-number"></span><br><span class="countdown-text">TIMER</span>
+    </div>
+    <div class="countdown-item">
+        <span id="minutes" class="countdown-number"></span><br><span class="countdown-text">MIN</span>
+    </div>
+    <div class="countdown-item">
+        <span id="seconds" class="countdown-number"></span><br><span class="countdown-text">SEK</span>
+    </div>
+
 </div>
+
+<p class="citat"> “Copenhagen Light <br> Festival har fokus på <br> energien” </p>
+
+<div class="brodtekst">
+<h2>VI BRINGER LYS OVER BYEN</h2>
+<p>I løbet af tre uger fyldt med lyskunst og design præsenterer <br> festivalen værker skabt af både etablerede og nye lysdesignere. I <br> februar inviteres alle til at udforske byen.  Nøje udvalgte <br> lysinsallationer transformere byens rum og skaber spændende <br> oplevelser fra indre by til områder udenfor centrum. </p>
+</div>
+
 <!-- KARUSEL -->
 
     <div class="slider">
+    <h1>AKTUELT</h1>
   <div class="slider-inner">
     <div class="slide">
 		<a href="#">PROGRAM</a>
@@ -49,8 +68,33 @@ import Layout from "../Layout.astro";
 
 </Layout>
 
-
 <script>
+
+var targetDate = new Date('2025-02-25T00:00:00');
+
+function countdown() {
+    var currentDate = new Date();
+    var difference = targetDate - currentDate;
+
+    var days = Math.floor(difference / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+    document.getElementById('days').innerHTML = days;
+    document.getElementById('hours').innerHTML = hours;
+    document.getElementById('minutes').innerHTML = minutes;
+    document.getElementById('seconds').innerHTML = seconds;
+
+    if (difference <= 0) {
+        clearInterval(timer);
+        document.getElementById('countdown').innerHTML = 'NEDTÆLLING TIL COPENHAGEN LIGHT FESTIVAL ER NÅET';
+    }
+}
+
+countdown();
+var timer = setInterval(countdown, 1000);
+
 document.addEventListener('DOMContentLoaded', function() {
   const slider = document.querySelector('.slider');
   const sliderInner = document.querySelector('.slider-inner');
@@ -103,38 +147,96 @@ document.addEventListener('DOMContentLoaded', function() {
 	overflow: hidden;
 }
 
+/* overskrift style */
 .wrapper .text { 
 	position: absolute;
-	color: white;
-	right: 3rem;
-	top: 6rem;
-	font-size: 5rem;
-	 font-family: "Jaldi", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-	text-align: right;
-	line-height: 1.2;
+color: white;
+right: 5%; 
+top: 15%; 
+font-size: 5vw; 
+font-family: "Jaldi", sans-serif;
+font-weight: 400;
+font-style: normal;
+text-align: right;
+line-height: 1.2;
 }
+
+
+
+/* citat style */
+.citat { 
+  position: relative;
+  color: white;
+  right: 25rem;
+  font-size: 3rem;
+  font-family: "Jaldi",sans-serif;
+  font-weight: 100;
+  text-align: center;
+  line-height: 1.2;
+  bottom: 36rem;
+}
+
+.brodtekst {
+	  position: relative;
+  color: white;
+  left: 51rem;
+  font-size: 1.3rem;
+  font-family: "Jaldi",sans-serif;
+  font-weight: 100;
+  line-height: 1.2;
+  bottom: 60rem;
+}
+
 
 /* billede style */
 		.illustration2 {
 		max-width: 100vw;
 		display: block;
-		/* transform: scaleX(1.5) scaleY(1.2) rotate(20deg); */
 		filter: brightness(40%);
-		padding-top: 6rem;  /* ændre position på illustration */
 	
 	}
 
 	.illustration {
 		max-width: 100vw;
 		display: block;
-		 transform: scaleX(1.5) scaleY(1.5);
-		 filter: brightness(40%);
-		 position: relative;
-  		top: 160px;
+		 filter: brightness(70%);
   		left: 77px;
 	}
+
+/* nedtælling style  */
+
+	.wrapper .countdown {
+	position: relative;
+  color: white;
+  bottom: 52rem;
+  font-size: 2rem;
+  font-family: "Jaldi",sans-serif;
+  text-align: center;
+}
+
+.countdown p {
+     font-family: "Jaldi",sans-serif; 
+	font-size: 1.5rem;
+	text-align: center;
+}
+
+.countdown-item {
+    display: inline-block;
+    text-align: center;
+	line-height: 0.7;
+}
+
+.countdown-item .countdown-text {
+   font-family: "Jaldi",sans-serif; 
+    font-size: 1rem; 
+}
+
+.countdown-number {
+     font-family: "nunito-sans", sans-serif;
+  font-weight: 800;
+    font-size: 3.5rem; 
+    line-height: 1.1;
+}
 
 h1 {
 text-align: left;
@@ -153,6 +255,7 @@ a {
 .slider {
   width: 100%;
   overflow: hidden;
+  margin-top: -26rem;
 }
 
 .slider-inner {
@@ -173,51 +276,5 @@ a {
     max-height: 300px;
   }
 }
-=======
-<Layout>
-  <div class="wrapper">
-    <img src="/billeder/illustration2.webp" alt="ill" class="illustration2" />
-    <img src="/billeder/illustration.webp" alt="ill" class="illustration" />
-    <div class="text">COPENHAGEN LIGHT <br /> FESTIVAL <br /> 2 - 25 FEBRUAR</div>
-  </div>
-</Layout>
 
-<style>
-  .wrapper {
-    width: 100%;
-    overflow: hidden;
-  }
-
-  .wrapper .text {
-    position: absolute;
-    color: white;
-    right: 3rem;
-    top: 6rem;
-    font-size: 5rem;
-    font-family: "Jaldi", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    text-align: right;
-    line-height: 1.2;
-  }
-
-  /* billede style */
-  .illustration2 {
-    max-width: 100vw;
-    display: block;
-    transform: scaleX(1.5) scaleY(1.2) rotate(20deg);
-    filter: brightness(70%);
-    padding-top: 6rem; /* ændre position på illustration */
-  }
-
-  .illustration {
-    max-width: 100vw;
-    display: block;
-    transform: scaleX(1.5) scaleY(1.5);
-    filter: brightness(70%);
-    position: relative;
-    top: 160px;
-    left: 77px;
-  }
->>>>>>> 270336913b3a800368e99164ed9671230fef3f31
 </style>
