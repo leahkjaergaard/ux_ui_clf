@@ -1,36 +1,45 @@
 ---
+//@ts-nocheck
 import Layout from "../Layout.astro";
 import Card from "../components/Card.astro";
 
-
+const data = await fetch("https://yzgwebwfkyaislvevipy.supabase.co/rest/v1/clf_data", {
+  method: "GET",
+  headers: {
+    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl6Z3dlYndma3lhaXNsdmV2aXB5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA4NDg5MTEsImV4cCI6MjAyNjQyNDkxMX0.6rLMBGBocalM2BMrgiETTrqsbyKcIVCrCAr_bwfmZiw",
+  },
+}).then((res) => res.json());
+console.log(data);
 ---
 
-
 <Layout>
- <h1>PROGRAM</h1>  
- <p class="underoverskrift">Vælg den bydel som den ønskede udstilling befinder sig i, og se det fulde oversigt </p>
- 
- <div class="grid">
-    
- <Card header="03.PIXELEARTH" image="/billeder/03.pixelearth.png" alt="Pixelearth"/>
- <Card header="03.PIXELEARTH" image="/billeder/03.pixelearth.png" alt="Pixelearth"/>
- <Card header="03.PIXELEARTH" image="/billeder/03.pixelearth.png" alt="Pixelearth"/>
- <Card header="03.PIXELEARTH" image="/billeder/03.pixelearth.png" alt="Pixelearth"/>
- <Card header="03.PIXELEARTH" image="/billeder/03.pixelearth.png" alt="Pixelearth"/>
- <Card header="03.PIXELEARTH" image="/billeder/03.pixelearth.png" alt="Pixelearth"/>
- <Card header="03.PIXELEARTH" image="/billeder/03.pixelearth.png" alt="Pixelearth"/>
- <Card header="03.PIXELEARTH" image="/billeder/03.pixelearth.png" alt="Pixelearth"/>
+  <h1>PROGRAM</h1>
+  <p class="underoverskrift">Vælg den bydel som den ønskede udstilling befinder sig i, og se det fulde oversigt</p>
 
-</div>
-
+  <div class="grid">
+    {
+      data.map((show) => {
+        return <Card header={show.description} image={show.image} alt={show.description} />;
+      })
+    }
+    <!-- <Card header="03.PIXELEARTH" image="/billeder/03.pixelearth.png" alt="Pixelearth" text="Her er mere teskt" /> -->
+    <!-- <Card header="03.PIXELEARTH" image="/billeder/03.pixelearth.png" alt="Pixelearth" />
+    <Card header="03.PIXELEARTH" image="/billeder/03.pixelearth.png" alt="Pixelearth" />
+    <Card header="03.PIXELEARTH" image="/billeder/03.pixelearth.png" alt="Pixelearth" />
+    <Card header="03.PIXELEARTH" image="/billeder/03.pixelearth.png" alt="Pixelearth" />
+    <Card header="03.PIXELEARTH" image="/billeder/03.pixelearth.png" alt="Pixelearth" />
+    <Card header="03.PIXELEARTH" image="/billeder/03.pixelearth.png" alt="Pixelearth" />
+    <Card header="03.PIXELEARTH" image="/billeder/03.pixelearth.png" alt="Pixelearth" />
+    <Card header="03.PIXELEARTH" image="/billeder/03.pixelearth.png" alt="Pixelearth" /> -->
+  </div>
 </Layout>
-  
 
 <style>
-    .grid {
+  .grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 0.5rem;
+    gap: 1.1rem;
+    max-width: 1450px;
+    margin: 0 auto;
   }
 </style>
-
