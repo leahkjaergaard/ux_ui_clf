@@ -5,277 +5,263 @@ import Card from "../components/Card.astro";
 ---
 
 <Layout>
+  <div class="wrapper">
+    <img src="/billeder/illustration2.webp" alt="ill" class="illustration2" />
+    <img src="/billeder/illustration.webp" alt="ill" class="illustration" />
 
-<div class="wrapper">
-	
-<img src="/billeder/illustration2.webp" alt="ill" class="illustration2">
-<img src="/billeder/illustration.webp" alt="ill" class="illustration">
+    <div class="text">COPENHAGEN LIGHT <br /> FESTIVAL <br /> 2 - 25 FEBRUAR</div>
+    <div id="countdown" class="countdown">
+      <!-- nedtælling tekst og tal til style -->
+      <p>NEDTÆLLING TIL COPENHAGEN <br /> LIGHT FESTIVAL</p>
 
-<div class="text"> COPENHAGEN LIGHT <br> FESTIVAL <br> 2 - 25 FEBRUAR</div>
-<div id="countdown" class="countdown">
-
-
-	<!-- nedtælling tekst og tal til style -->
-	 <p>NEDTÆLLING TIL COPENHAGEN <br> LIGHT FESTIVAL</p>
-
-	  <div class="countdown-item">
-        <span id="days" class="countdown-number"></span><br><span class="countdown-text">DAGE</span>
-    </div>
-    <div class="countdown-item">
-        <span id="hours" class="countdown-number"></span><br><span class="countdown-text">TIMER</span>
-    </div>
-    <div class="countdown-item">
-        <span id="minutes" class="countdown-number"></span><br><span class="countdown-text">MIN</span>
-    </div>
-    <div class="countdown-item">
-        <span id="seconds" class="countdown-number"></span><br><span class="countdown-text">SEK</span>
+      <div class="countdown-item">
+        <span id="days" class="countdown-number"></span><br /><span class="countdown-text">DAGE</span>
+      </div>
+      <div class="countdown-item">
+        <span id="hours" class="countdown-number"></span><br /><span class="countdown-text">TIMER</span>
+      </div>
+      <div class="countdown-item">
+        <span id="minutes" class="countdown-number"></span><br /><span class="countdown-text">MIN</span>
+      </div>
+      <div class="countdown-item">
+        <span id="seconds" class="countdown-number"></span><br /><span class="countdown-text">SEK</span>
+      </div>
     </div>
 
-</div>
+    <p class="citat">“Copenhagen Light <br /> Festival har fokus på <br /> energien”</p>
 
-<p class="citat"> “Copenhagen Light <br> Festival har fokus på <br> energien” </p>
+    <div class="brodtekst">
+      <h2>VI BRINGER LYS OVER BYEN</h2>
+      <p>I løbet af tre uger fyldt med lyskunst og design præsenterer <br /> festivalen værker skabt af både etablerede og nye lysdesignere. I <br /> februar inviteres alle til at udforske byen. Nøje udvalgte <br /> lysinsallationer transformere byens rum og skaber spændende <br /> oplevelser fra indre by til områder udenfor centrum.</p>
+    </div>
 
-<div class="brodtekst">
-<h2>VI BRINGER LYS OVER BYEN</h2>
-<p>I løbet af tre uger fyldt med lyskunst og design præsenterer <br> festivalen værker skabt af både etablerede og nye lysdesignere. I <br> februar inviteres alle til at udforske byen.  Nøje udvalgte <br> lysinsallationer transformere byens rum og skaber spændende <br> oplevelser fra indre by til områder udenfor centrum. </p>
-</div>
-
-<!-- KARUSEL -->
+    <!-- KARUSEL -->
 
     <div class="slider">
-    <h1>AKTUELT</h1>
-  <div class="slider-inner">
-    <div class="slide">
-		<a href="#">PROGRAM</a>
-      <Card image="/billeder/03.pixelearth_singleview.webp" alt="Pixelearth"/>
-    </div>
-    <div class="slide">
-		<a href="#">VORES APP</a>
-      <Card image="/billeder/03.pixelearth_singleview.webp" alt="Pixelearth"/>
-    </div>
-    <div class="slide">
-		<a href="#">KORT / RUTER </a>
-      <Card image="/billeder/03.pixelearth_singleview.webp" alt="Pixelearth"/>
-    </div>
-	 <div class="slide">
-		<a href="#">BILLETTER</a>
-      <Card image="/billeder/03.pixelearth_singleview.webp" alt="Pixelearth"/>
+      <h1>AKTUELT</h1>
+      <div class="slider-inner">
+        <div class="slide">
+          <a href="#">PROGRAM</a>
+          <Card image="/billeder/03.pixelearth_singleview.webp" alt="Pixelearth" />
+        </div>
+        <div class="slide">
+          <a href="#">VORES APP</a>
+          <Card image="/billeder/03.pixelearth_singleview.webp" alt="Pixelearth" />
+        </div>
+        <div class="slide">
+          <a href="#">KORT / RUTER </a>
+          <Card image="/billeder/03.pixelearth_singleview.webp" alt="Pixelearth" />
+        </div>
+        <div class="slide">
+          <a href="#">BILLETTER</a>
+          <Card image="/billeder/03.pixelearth_singleview.webp" alt="Pixelearth" />
+        </div>
+      </div>
+
+      <button class="prev">Forrige</button>
+      <button class="next">Næste</button>
     </div>
   </div>
 
-  <button class="prev">Forrige</button>
-  <button class="next">Næste</button>
-</div>
+  <script>
+    var targetDate = new Date("2025-02-25T00:00:00");
 
-</Layout>
+    function countdown() {
+      var currentDate = new Date();
+      var difference = targetDate - currentDate;
 
-<script>
+      var days = Math.floor(difference / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
-var targetDate = new Date('2025-02-25T00:00:00');
+      document.getElementById("days").innerHTML = days;
+      document.getElementById("hours").innerHTML = hours;
+      document.getElementById("minutes").innerHTML = minutes;
+      document.getElementById("seconds").innerHTML = seconds;
 
-function countdown() {
-    var currentDate = new Date();
-    var difference = targetDate - currentDate;
-
-    var days = Math.floor(difference / (1000 * 60 * 60 * 24));
-    var hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    var minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-    var seconds = Math.floor((difference % (1000 * 60)) / 1000);
-
-    document.getElementById('days').innerHTML = days;
-    document.getElementById('hours').innerHTML = hours;
-    document.getElementById('minutes').innerHTML = minutes;
-    document.getElementById('seconds').innerHTML = seconds;
-
-    if (difference <= 0) {
+      if (difference <= 0) {
         clearInterval(timer);
-        document.getElementById('countdown').innerHTML = 'NEDTÆLLING TIL COPENHAGEN LIGHT FESTIVAL ER NÅET';
+        document.getElementById("countdown").innerHTML = "NEDTÆLLING TIL COPENHAGEN LIGHT FESTIVAL ER NÅET";
+      }
     }
-}
 
-countdown();
-var timer = setInterval(countdown, 1000);
+    countdown();
+    var timer = setInterval(countdown, 1000);
 
-document.addEventListener('DOMContentLoaded', function() {
-  const slider = document.querySelector('.slider');
-  const sliderInner = document.querySelector('.slider-inner');
-  const slides = document.querySelectorAll('.slide');
-  const prevBtn = document.querySelector('.prev');
-  const nextBtn = document.querySelector('.next');
+    document.addEventListener("DOMContentLoaded", function () {
+      const slider = document.querySelector(".slider");
+      const sliderInner = document.querySelector(".slider-inner");
+      const slides = document.querySelectorAll(".slide");
+      const prevBtn = document.querySelector(".prev");
+      const nextBtn = document.querySelector(".next");
 
-  let currentIndex = 0;
-  const slideWidth = slides[0].offsetWidth;
+      let currentIndex = 0;
+      const slideWidth = slides[0].offsetWidth;
 
-  // skift til næste billede
-  function nextSlide() {
-    if (currentIndex < slides.length - 1) {
-      currentIndex++;
-    } else {
-      currentIndex = 0; 
+      // skift til næste billede
+      function nextSlide() {
+        if (currentIndex < slides.length - 1) {
+          currentIndex++;
+        } else {
+          currentIndex = 0;
+        }
+        updateSlider();
+      }
+
+      // forrige slide
+      function prevSlide() {
+        if (currentIndex > 0) {
+          currentIndex--;
+        } else {
+          currentIndex = slides.length - 1;
+        }
+        updateSlider();
+      }
+
+      // Opdater sliderens position baseret på currentIndex
+      function updateSlider() {
+        const newPosition = -currentIndex * slideWidth;
+        sliderInner.style.transform = `translateX(${newPosition}px)`;
+      }
+
+      // Lyt efter klik på navigationsknapperne
+      if (prevBtn && nextBtn) {
+        prevBtn.addEventListener("click", prevSlide);
+        nextBtn.addEventListener("click", nextSlide);
+      }
+    });
+  </script>
+
+  <style>
+    .wrapper {
+      width: 100%;
+      overflow: hidden;
     }
-    updateSlider();
-  }
 
- // forrige slide
-  function prevSlide() {
-    if (currentIndex > 0) {
-      currentIndex--;
-    } else {
-      currentIndex = slides.length - 1; 
+    /* overskrift style */
+    .wrapper .text {
+      position: absolute;
+      color: white;
+      right: 5%;
+      top: 15%;
+      font-size: 5vw;
+      font-family: "Jaldi", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      text-align: right;
+      line-height: 1.2;
     }
-    updateSlider();
-  }
 
-  // Opdater sliderens position baseret på currentIndex
-  function updateSlider() {
-    const newPosition = -currentIndex * slideWidth;
-    sliderInner.style.transform = `translateX(${newPosition}px)`;
-  }
+    /* citat style */
+    .citat {
+      position: relative;
+      color: white;
+      right: 25rem;
+      font-size: 3rem;
+      font-family: "Jaldi", sans-serif;
+      font-weight: 100;
+      text-align: center;
+      line-height: 1.2;
+      bottom: 36rem;
+    }
 
-  // Lyt efter klik på navigationsknapperne
-  if (prevBtn && nextBtn) {
-    prevBtn.addEventListener('click', prevSlide);
-    nextBtn.addEventListener('click', nextSlide);
-  }
-});
-</script>
+    .brodtekst {
+      position: relative;
+      color: white;
+      left: 51rem;
+      font-size: 1.3rem;
+      font-family: "Jaldi", sans-serif;
+      font-weight: 100;
+      line-height: 1.2;
+      bottom: 60rem;
+    }
 
+    /* billede style */
+    .illustration2 {
+      max-width: 100vw;
+      display: block;
+      filter: brightness(40%);
+    }
 
-<style>
+    .illustration {
+      max-width: 100vw;
+      display: block;
+      filter: brightness(70%);
+      left: 77px;
+    }
 
-.wrapper {
-	width: 100%;
-	overflow: hidden;
-}
+    /* nedtælling style  */
 
-/* overskrift style */
-.wrapper .text { 
-	position: absolute;
-color: white;
-right: 5%; 
-top: 15%; 
-font-size: 5vw; 
-font-family: "Jaldi", sans-serif;
-font-weight: 400;
-font-style: normal;
-text-align: right;
-line-height: 1.2;
-}
+    .wrapper .countdown {
+      position: relative;
+      color: white;
+      bottom: 52rem;
+      font-size: 2rem;
+      font-family: "Jaldi", sans-serif;
+      text-align: center;
+    }
 
+    .countdown p {
+      font-family: "Jaldi", sans-serif;
+      font-size: 1.5rem;
+      text-align: center;
+    }
 
+    .countdown-item {
+      display: inline-block;
+      text-align: center;
+      line-height: 0.7;
+    }
 
-/* citat style */
-.citat { 
-  position: relative;
-  color: white;
-  right: 25rem;
-  font-size: 3rem;
-  font-family: "Jaldi",sans-serif;
-  font-weight: 100;
-  text-align: center;
-  line-height: 1.2;
-  bottom: 36rem;
-}
+    .countdown-item .countdown-text {
+      font-family: "Jaldi", sans-serif;
+      font-size: 1rem;
+    }
 
-.brodtekst {
-	  position: relative;
-  color: white;
-  left: 51rem;
-  font-size: 1.3rem;
-  font-family: "Jaldi",sans-serif;
-  font-weight: 100;
-  line-height: 1.2;
-  bottom: 60rem;
-}
+    .countdown-number {
+      font-family: "nunito-sans", sans-serif;
+      font-weight: 800;
+      font-size: 3.5rem;
+      line-height: 1.1;
+    }
 
+    h1 {
+      text-align: left;
+    }
 
-/* billede style */
-		.illustration2 {
-		max-width: 100vw;
-		display: block;
-		filter: brightness(40%);
-	
-	}
+    a {
+      margin-bottom: 10px;
+      color: white;
+      font-family: "Jaldi", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+    }
 
-	.illustration {
-		max-width: 100vw;
-		display: block;
-		 filter: brightness(70%);
-  		left: 77px;
-	}
+    /* KARRUSEL */
+    .slider {
+      width: 100%;
+      overflow: hidden;
+      margin-top: -26rem;
+    }
 
-/* nedtælling style  */
+    .slider-inner {
+      display: flex;
+      transition: transform 0.3s ease;
+      gap: 2rem;
+    }
 
-	.wrapper .countdown {
-	position: relative;
-  color: white;
-  bottom: 52rem;
-  font-size: 2rem;
-  font-family: "Jaldi",sans-serif;
-  text-align: center;
-}
+    .slide {
+      max-width: 100%;
+      height: auto;
+    }
 
-.countdown p {
-     font-family: "Jaldi",sans-serif; 
-	font-size: 1.5rem;
-	text-align: center;
-}
-
-.countdown-item {
-    display: inline-block;
-    text-align: center;
-	line-height: 0.7;
-}
-
-.countdown-item .countdown-text {
-   font-family: "Jaldi",sans-serif; 
-    font-size: 1rem; 
-}
-
-.countdown-number {
-     font-family: "nunito-sans", sans-serif;
-  font-weight: 800;
-    font-size: 3.5rem; 
-    line-height: 1.1;
-}
-
-h1 {
-text-align: left;
-}
-
-a {
-  margin-bottom: 10px; 
-  color: white;
-  font-family: "Jaldi", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-
-/* KARRUSEL */
-.slider {
-  width: 100%;
-  overflow: hidden;
-  margin-top: -26rem;
-}
-
-.slider-inner {
-  display: flex;
-  transition: transform 0.3s ease;
-  gap: 2rem;
-}
-
-.slide {
-  max-width: 100%;
-  height: auto;
-}
-
-/* Tilpas billedstørrelse på mindre skærme */
-@media (max-width: 767px) {
-  .slide {
-    max-width: 100%;
-    max-height: 300px;
-  }
-}
-
-</style>
+    /* Tilpas billedstørrelse på mindre skærme */
+    @media (max-width: 767px) {
+      .slide {
+        max-width: 100%;
+        max-height: 300px;
+      }
+    }
+  </style>
+</Layout>
